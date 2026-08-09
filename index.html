@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wahyu & Silvia</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8f1eb;
+  color: #333;
+  text-align: center;
+}
+
+.cover {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  background: linear-gradient(
+    rgba(255,255,255,0.85),
+    rgba(248,241,235,0.95)
+  );
+}
+
+.cover-content {
+  width: 100%;
+  max-width: 500px;
+}
+
+.small-title {
+  font-size: 18px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-family: Georgia, serif;
+  font-size: 55px;
+  margin: 10px 0;
+}
+
+.names {
+  font-family: Georgia, serif;
+  font-size: 42px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.date {
+  font-size: 19px;
+  margin: 20px 0 35px;
+}
+
+button {
+  border: none;
+  padding: 16px 35px;
+  border-radius: 40px;
+  background: #b89572;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+#isiUndangan {
+  display: none;
+}
+
+section {
+  padding: 60px 20px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.section-title {
+  font-family: Georgia, serif;
+  font-size: 38px;
+  margin-bottom: 30px;
+}
+
+.quote {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  line-height: 1.8;
+  font-style: italic;
+}
+
+.card {
+  background: white;
+  padding: 30px 20px;
+  margin: 25px 0;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+  font-family: Georgia, serif;
+  font-size: 28px;
+  margin-top: 0;
+}
+
+.card p {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.time-box {
+  background: #b89572;
+  color: white;
+  padding: 18px 5px;
+  border-radius: 15px;
+}
+
+.time-box span {
+  display: block;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.time-box small {
+  font-size: 13px;
+}
+
+.map-button {
+  margin-top: 15px;
+}
+
+.whatsapp {
+  background: #6fa77c;
+}
+
+.footer {
+  padding: 50px 20px;
+  background: #3e332c;
+  color: white;
+}
+
+.heart {
+  font-size: 35px;
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.fade {
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media(max-width:600px) {
+
+  h1 {
+    font-size: 42px;
+  }
+
+  .names {
+    font-size: 34px;
+  }
+
+  .section-title {
+    font-size: 32px;
+  }
+
+  .countdown {
+    gap: 6px;
+  }
+
+  .time-box {
+    padding: 14px 3px;
+  }
+
+  .time-box span {
+    font-size: 23px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- COVER -->
+
+<div class="cover">
+
+  <div class="cover-content fade">
+
+    <div class="small-title">
+      THE WEDDING OF
+    </div>
+
+    <h1>Wahyu</h1>
+
+    <div class="names">
+      & Silvia
+    </div>
+
+    <div class="date">
+      29 November 2026
+    </div>
+
+    <button onclick="bukaUndangan()">
+      💌 BUKA UNDANGAN
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- ISI UNDANGAN -->
+
+<div id="isiUndangan">
+
+<section>
+
+  <div class="heart">
+    ❤️
+  </div>
+
+  <h2 class="section-title">
+    Assalamu'alaikum Wr. Wb.
+  </h2>
+
+  <p class="quote">
+    Dengan memohon rahmat dan ridho Allah SWT,
+    kami bermaksud mengundang Bapak/Ibu/Saudara
+    untuk hadir dalam acara pernikahan kami.
+  </p>
+
+  <h2>
+    Wahyu & Silvia
+  </h2>
+
+</section>
+
+
+<!-- COUNTDOWN -->
+
+<section>
+
+  <h2 class="section-title">
+    Menuju Hari Bahagia
+  </h2>
+
+  <div class="countdown">
+
+    <div class="time-box">
+      <span id="hari">0</span>
+      <small>Hari</small>
+    </div>
+
+    <div class="time-box">
+      <span id="jam">0</span>
+      <small>Jam</small>
+    </div>
+
+    <div class="time-box">
+      <span id="menit">0</span>
+      <small>Menit</small>
+    </div>
+
+    <div class="time-box">
+      <span id="detik">0</span>
+      <small>Detik</small>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ACARA -->
+
+<section>
+
+  <h2 class="section-title">
+    Acara Pernikahan
+  </h2>
+
+
+  <div class="card">
+
+    <h3>
+      Akad Nikah
+    </h3>
+
+    <p>
+      <b>29 November 2026</b>
+      <br>
+      Pukul 09.00 WIB
+    </p>
+
+  </div>
+
+
+  <div class="card">
+
+    <h3>
+      Resepsi
+    </h3>
+
+    <p>
+      <b>29 November 2026</b>
+      <br>
+      Pukul 19.00 WIB - selesai
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- LOKASI -->
+
+<section>
+
+  <h2 class="section-title">
+    Lokasi
+  </h2>
+
+  <div class="card">
+
+    <h3>
+      Tanjung Arum
+    </h3>
+
+    <p>
+      Glagahwangi,
+      <br>
+      Polanharjo, Klaten
+    </p>
+
+    <button
+      class="map-button"
+      onclick="bukaMaps()">
+      📍 BUKA GOOGLE MAPS
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- KONFIRMASI -->
+
+<section>
+
+  <h2 class="section-title">
+    Konfirmasi Kehadiran
+  </h2>
+
+  <p class="quote">
+    Kehadiran dan doa restu Bapak/Ibu/Saudara
+    merupakan kebahagiaan bagi kami.
+  </p>
+
+  <br>
+
+  <button
+    class="whatsapp"
+    onclick="konfirmasiWA()">
+    💬 KONFIRMASI VIA WHATSAPP
+  </button>
+
+</section>
+
+
+<!-- PENUTUP -->
+
+<div class="footer">
+
+  <div class="heart">
+    ❤️
+  </div>
+
+  <h2>
+    Wahyu & Silvia
+  </h2>
+
+  <p>
+    Terima kasih atas doa dan restunya.
+  </p>
+
+  <p>
+    29 November 2026
+  </p>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* BUKA UNDANGAN */
+
+function bukaUndangan() {
+
+  document.getElementById("isiUndangan").style.display = "block";
+
+  window.scrollTo({
+    top: window.innerHeight,
+    behavior: "smooth"
+  });
+
+}
+
+
+/* COUNTDOWN */
+
+var tanggalPernikahan =
+new Date("November 29, 2026 09:00:00").getTime();
+
+var countdown =
+setInterval(function() {
+
+  var sekarang =
+  new Date().getTime();
+
+  var jarak =
+  tanggalPernikahan - sekarang;
+
+  var hari =
+  Math.floor(
+    jarak / (1000 * 60 * 60 * 24)
+  );
+
+  var jam =
+  Math.floor(
+    (jarak % (1000 * 60 * 60 * 24))
+    / (1000 * 60 * 60)
+  );
+
+  var menit =
+  Math.floor(
+    (jarak % (1000 * 60 * 60))
+    / (1000 * 60)
+  );
+
+  var detik =
+  Math.floor(
+    (jarak % (1000 * 60))
+    / 1000
+  );
+
+
+  document.getElementById("hari")
+  .innerHTML = hari;
+
+  document.getElementById("jam")
+  .innerHTML = jam;
+
+  document.getElementById("menit")
+  .innerHTML = menit;
+
+  document.getElementById("detik")
+  .innerHTML = detik;
+
+
+  if (jarak < 0) {
+
+    clearInterval(countdown);
+
+    document.getElementById("hari")
+    .innerHTML = "0";
+
+    document.getElementById("jam")
+    .innerHTML = "0";
+
+    document.getElementById("menit")
+    .innerHTML = "0";
+
+    document.getElementById("detik")
+    .innerHTML = "0";
+
+  }
+
+}, 1000);
+
+
+/* GOOGLE MAPS */
+
+function bukaMaps() {
+
+  window.open(
+    "https://www.google.com/maps/search/?api=1&query=Tanjung+Arum+Glagahwangi+Polanharjo+Klaten",
+    "_blank"
+  );
+
+}
+
+
+/* WHATSAPP */
+
+function konfirmasiWA() {
+
+  var nomor = "085742672475";
+
+  var pesan =
+  "Assalamu'alaikum. Saya ingin mengonfirmasi kehadiran di acara pernikahan Wahyu & Silvia pada 29 November 2026.";
+
+  window.open(
+    "https://wa.me/" + nomor +
+    "?text=" + encodeURIComponent(pesan),
+    "_blank"
+  );
+
+}
+
+</script>
+
+</body>
+</html>
