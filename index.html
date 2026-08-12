@@ -544,6 +544,69 @@ function konfirmasiWA() {
 }
 
 </script>
+<!-- COUNTDOWN PERNIKAHAN -->
+<div style="margin:30px 15px;padding:25px 15px;border-radius:20px;background:linear-gradient(135deg,#fff5f7,#f8e8ec);box-shadow:0 8px 25px rgba(0,0,0,.12);">
+  <div style="font-size:14px;letter-spacing:2px;color:#9b6874;">
+    MENUJU HARI BAHAGIA
+  </div>
 
+  <h2 style="margin:10px 0 20px;color:#7d4654;">
+    Wahyu &amp; Silvia
+  </h2>
+
+  <div id="countdown" style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap;">
+    <div style="background:white;padding:12px 10px;border-radius:12px;min-width:58px;">
+      <b id="hari" style="font-size:22px;">0</b><br>
+      <small>Hari</small>
+    </div>
+
+    <div style="background:white;padding:12px 10px;border-radius:12px;min-width:58px;">
+      <b id="jam" style="font-size:22px;">0</b><br>
+      <small>Jam</small>
+    </div>
+
+    <div style="background:white;padding:12px 10px;border-radius:12px;min-width:58px;">
+      <b id="menit" style="font-size:22px;">0</b><br>
+      <small>Menit</small>
+    </div>
+
+    <div style="background:white;padding:12px 10px;border-radius:12px;min-width:58px;">
+      <b id="detik" style="font-size:22px;">0</b><br>
+      <small>Detik</small>
+    </div>
+  </div>
+
+  <p style="margin-top:20px;color:#777;">
+    29 November 2026
+  </p>
+</div>
+
+<script>
+const tanggalPernikahan = new Date("2026-11-29T08:00:00+07:00").getTime();
+
+function hitungMundur() {
+  const sekarang = new Date().getTime();
+  const selisih = tanggalPernikahan - sekarang;
+
+  if (selisih <= 0) {
+    document.getElementById("countdown").innerHTML =
+      "<h3>Hari bahagia telah tiba ❤️</h3>";
+    return;
+  }
+
+  const hari = Math.floor(selisih / (1000 * 60 * 60 * 24));
+  const jam = Math.floor((selisih / (1000 * 60 * 60)) % 24);
+  const menit = Math.floor((selisih / (1000 * 60)) % 60);
+  const detik = Math.floor((selisih / 1000) % 60);
+
+  document.getElementById("hari").textContent = hari;
+  document.getElementById("jam").textContent = jam;
+  document.getElementById("menit").textContent = menit;
+  document.getElementById("detik").textContent = detik;
+}
+
+hitungMundur();
+setInterval(hitungMundur, 1000);
+</script>
 </body>
 </html>
