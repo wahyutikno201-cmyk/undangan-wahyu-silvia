@@ -334,6 +334,34 @@ section {
     margin: 15px auto;
 }
 </style>
+  <style>
+/* Nama pengantin */
+h1 {
+    font-family: Georgia, serif !important;
+    font-size: 48px !important;
+    font-weight: 500 !important;
+    letter-spacing: 2px;
+    color: #8b5363 !important;
+    text-shadow: 0 2px 8px rgba(120,80,90,0.15);
+}
+
+/* Sentuhan romantis pada halaman */
+h1::after {
+    content: " ♡ ";
+    display: block;
+    font-size: 22px;
+    margin-top: 8px;
+    color: #c894a3;
+}
+
+/* Tampilan lebih lembut di HP */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 38px !important;
+        letter-spacing: 1px;
+    }
+}
+</style>
 </head>
 
 <body>
