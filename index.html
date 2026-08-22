@@ -429,6 +429,32 @@ body {
     transform: scale(0.95);
 }
 </style>
+  <style>
+.kelopak-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.kelopak {
+    position: absolute;
+    top: -30px;
+    opacity: 0.7;
+    animation: jatuh linear infinite;
+}
+
+@keyframes jatuh {
+    0% {
+        transform: translateY(-30px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+</style>
 </head>
 
 <body>
@@ -856,5 +882,25 @@ function hitungMundur() {
 hitungMundur();
 setInterval(hitungMundur, 1000);
 </script>
+    ... kode website kamu ...
+
+    <div class="kelopak-container"></div>
+
+    <script>
+    const container = document.querySelector('.kelopak-container');
+
+    for (let i = 0; i < 12; i++) {
+        const kelopak = document.createElement('span');
+        kelopak.innerHTML = '🌸';
+        kelopak.className = 'kelopak';
+        kelopak.style.left = Math.random() * 100 + 'vw';
+        kelopak.style.animationDuration = (6 + Math.random() * 6) + 's';
+        kelopak.style.animationDelay = (Math.random() * 6) + 's';
+        kelopak.style.fontSize = (10 + Math.random() * 10) + 'px';
+        container.appendChild(kelopak);
+    }
+    </script>
+
+</body>
 </body>
 </html>
