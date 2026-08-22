@@ -409,6 +409,25 @@ body {
         opacity: 1;
     }
 }
+    .btn-buka {
+    padding: 13px 30px !important;
+    border-radius: 30px !important;
+    font-family: Georgia, serif !important;
+    font-size: 16px !important;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(120,80,90,0.18);
+}
+
+.btn-buka:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 9px 22px rgba(120,80,90,0.25);
+}
+
+.btn-buka:active {
+    transform: scale(0.95);
+}
 </style>
 </head>
 
@@ -445,7 +464,7 @@ body {
       29 November 2026
     </div>
 
-    <button onclick="bukaUndangan()">
+    <button class="btn-buka" onclick="bukaUndangan()">Buka Undangan</button>
       💌 BUKA UNDANGAN
     </button>
 
